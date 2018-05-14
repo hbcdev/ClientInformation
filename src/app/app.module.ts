@@ -19,7 +19,6 @@ import {
   MatPaginatorModule,
   MatTabsModule,
   MatDialogModule,
-  
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './search/search.component';
@@ -38,6 +37,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { WebPreauthComponent } from './web-preauth/web-preauth.component';
 import { WebClaimPayComponent } from './web-claim-pay/web-claim-pay.component';
 import { CSCallLogComponent } from './cscall-log/cscall-log.component';
+import { ClientDialogComponent } from './client-dialog/client-dialog.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +57,7 @@ import { CSCallLogComponent } from './cscall-log/cscall-log.component';
     WebPreauthComponent,
     WebClaimPayComponent,
     CSCallLogComponent,
+    ClientDialogComponent,
     ],
   imports: [
     BrowserModule,
@@ -79,9 +80,10 @@ import { CSCallLogComponent } from './cscall-log/cscall-log.component';
     MatTabsModule,
     MatDialogModule,
     AppRoutingModule,
-    
   ],
   providers: [],
+  // entryComponents: [DialogDataExample, DialogDataExampleDialog],
+  // declarations: [DialogDataExample, DialogDataExampleDialog],
   bootstrap: [MyNavComponent]
 })
 export class AppModule { }

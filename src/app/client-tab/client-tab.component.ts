@@ -24,7 +24,11 @@ export class ClientTabComponent implements OnInit {
 }
 
 export interface tabData {
-  tab1: string;
+  tab1: {
+    Eclusion:  string;
+    InfoNote:  string;
+    Notation: string;
+  } ;
   tab2: {
     data: string;
   };
@@ -36,8 +40,8 @@ export interface tabData {
     ClientNo: string;
     Group: string;
     Address: string;
-    Waitting2: string;
     Note: string;
+    Waitting2: string;
     OldPolicy: string;
     PolicyID: string;
   };
@@ -122,7 +126,7 @@ export const TAB_DATA: tabData[] = [
       date: 'string',
     },
   }
-],
+];
 
 export interface Element {
   PolicyNo: string;

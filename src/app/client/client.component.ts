@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatTableDataSource, MatDialog } from '@angular/material';
 import * as $ from 'jquery';
+import { ClientDialogComponent } from '../client-dialog/client-dialog.component';
+
+
+
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
@@ -13,6 +17,7 @@ export class ClientComponent implements OnInit {
   clientData: any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
+  constructor (public dialog: MatDialog ) {}
   ngOnInit() {
     setTimeout(() => {
       $('.loading').hide();
@@ -22,7 +27,11 @@ export class ClientComponent implements OnInit {
     this.clientData = CLINT_DATA[0];
   }
   openDialog() {
-
+    this.dialog.open(ClientDialogComponent, {
+      data: {
+        animal: 'panda'
+      }
+    });
   }
 }
 export interface Element {
@@ -48,7 +57,7 @@ export interface clientModel {
   name: string;
   policyHolder: string;
   policyNo: string;
-  familyPerson: number;
+  familyPerson: string;
   plan: string;
   personalID: string;
   sex: string;
@@ -58,8 +67,8 @@ export interface clientModel {
   age: string;
   policyDate: string;
   graceTo: string;
-  policyYear: number;
-  duration: number;
+  policyYear: string;
+  duration: string;
   payFreq: string;
   status: string;
   riderDate: string;
@@ -83,7 +92,7 @@ export const CLINT_DATA: clientModel[] = [{
   name: '2',
   policyHolder: '3',
   policyNo: '4',
-  familyPerson: 5,
+  familyPerson: '5',
   plan: '6',
   personalID: '7',
   sex: '8',
@@ -93,8 +102,8 @@ export const CLINT_DATA: clientModel[] = [{
   age: '12',
   policyDate: '13',
   graceTo: '14',
-  policyYear: 15,
-  duration: 16,
+  policyYear: '15',
+  duration: '16',
   payFreq: '17',
   status: '18',
   riderDate: '19',
