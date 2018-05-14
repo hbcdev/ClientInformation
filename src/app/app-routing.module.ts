@@ -8,6 +8,7 @@ import { ClaimHisByNatIDComponent } from './claim-his-by-nat-id/claim-his-by-nat
 import { AppointmentComponent } from './appointment/appointment.component';
 import { WebPreauthComponent } from './web-preauth/web-preauth.component';
 import { WebClaimPayComponent } from './web-claim-pay/web-claim-pay.component';
+import { CSCallLogComponent } from './cscall-log/cscall-log.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/client', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'appPoint', component: AppointmentComponent },
   { path: 'Webpreauth', component: WebPreauthComponent },
   { path: 'ClaimPay', component: WebClaimPayComponent },
+  { path: 'CallLog', component: CSCallLogComponent },
 ];
 
 

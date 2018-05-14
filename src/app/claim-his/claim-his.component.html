@@ -1,20 +1,20 @@
 <h2>{{page_title}}</h2>
 <hr class="hr-style">
 <mat-card style="height: 800px;">
-    <mat-card-subtitle style="text-align: right;margin-top: -44px;">
-        <span class="span-h">
-          <span class="tabcolor-span" style="background-color: #fd9941 ;color:#ff00000a;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Claim Waitting</span>
-        <span class="span-h">
-          <span class="tabcolor-span" style="background-color: #ff000080 ;color:#ff00000a;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Deny</span>
-        <span class="span-h">
-          <span class="tabcolor-span" style="background-color: #fffd4b ;color:#fffd4b;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Exgratia</span>
-        <span class="span-h">
-          <span class="tabcolor-span" style="background-color: #f3f3f3 ;color:#f3f3f3;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Fax Claim</span>
-        <span class="span-h">
-          <span class="tabcolor-span" style="background-color: #fd6acb ;color:#fd6acb;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Cancel</span>
-        <span class="span-h">
-          <span class="tabcolor-span" style="background-color: #6dfd30 ;color:#6dfd30;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Return</span>
-      </mat-card-subtitle>
+  <mat-card-subtitle style="text-align: right;margin-top: -44px;">
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #fd9941 ;color:#ff00000a;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Claim Waitting</span>
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #ff000080 ;color:#ff00000a;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Deny</span>
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #fffd4b ;color:#fffd4b;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Exgratia</span>
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #f3f3f3 ;color:#f3f3f3;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Fax Claim</span>
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #fd6acb ;color:#fd6acb;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Cancel</span>
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #6dfd30 ;color:#6dfd30;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Return</span>
+  </mat-card-subtitle>
   <div style="overflow-x:auto;margin-top: -10px">
     <table mat-table #table [dataSource]="claimHisDataTable">
       <ng-container matColumnDef="RecieveDate">
@@ -170,21 +170,19 @@
 
   <div style="margin-top: -40px;">
     <div class="panel">
-      <b>Indicstor of Admission :</b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quidem est numquam debitis voluptates
-      illum error odio, autem facilis temporibus voluptas laboriosam iste blanditiis minus, voluptatum rem consequuntur doloremque
-      magni.
+      <b>Indicstor of Admission :</b>
+      {{claimHisDetail.IndicstorOfAdmission}}
     </div>
     <div class="panel">
-      <b>Treatment Plan :  </b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quidem est numquam debitis voluptates
-      illum error odio, autem facilis temporibus voluptas laboriosam iste blanditiis minus, voluptatum rem consequuntur doloremque
-      magni.
+      <b>Treatment Plan : </b>
+      {{claimHisDetail.TreatmentPlan}}
     </div>
   </div>
 
   <div style="overflow-x:auto;margin-top: 110px;">
     <app-claim-his-table2></app-claim-his-table2>
-    <button type="submit" mat-raised-button  style="float: right; margin-left: 15px;font-size: 16px;width: 150px;height: 50px;background-color: #20b2b7;color:#fff;">Export To Excel</button>
+    <button type="submit" mat-raised-button style="float: right; margin-left: 15px;font-size: 16px;width: 150px;height: 50px;background-color: #20b2b7;color:#fff;">Export To Excel</button>
   </div>
- 
-  
+
+
 </mat-card>

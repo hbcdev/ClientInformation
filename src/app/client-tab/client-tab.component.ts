@@ -6,7 +6,7 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
   styleUrls: ['./client-tab.component.css']
 })
 export class ClientTabComponent implements OnInit {
-  displayData = ['CardNo', 'IssueDate', 'ExpDate', 'PolicyNo', 'NationID', 'PolicyID'];
+  displayData = ['PolicyNo', 'Plan', 'Effective', 'Expired', 'PolicyYear'];
   displaySource = new MatTableDataSource<Element>(ELEMENT_DATA);
 
   paymentTable = ['Period' , 'DueDate' , 'PiadDate' , 'Premium' , 'Filename'  ];
@@ -19,19 +19,20 @@ export class ClientTabComponent implements OnInit {
 
 }
 export interface Element {
-  CardNo: string;
-  IssueDate: string;
-  ExpDate: string;
   PolicyNo: string;
-  NationID: string;
-  PolicyID: string;
+  Plan: string;
+  Effective: string;
+  Expired: string;
+  PolicyYear: string;
 }
 
 const ELEMENT_DATA: Element[] = [
   {
-    CardNo: '12345647987', IssueDate: '01/01/61 12:00',
-    ExpDate: '01/01/61 12:00', PolicyNo: '00-12854-45684-5255',
-    NationID: '1122588745668/', PolicyID: '123' 
+    PolicyNo: 'xxxxxxxxx',
+    Plan: 'xxxxxxxxx',
+    Effective: 'xxxxxxxxx',
+    Expired: '01/01/61 12:00',
+    PolicyYear: '99',
   }
 
 ];

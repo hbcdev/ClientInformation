@@ -1,4 +1,4 @@
-import { Component, OnInit , ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import * as $ from 'jquery';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
@@ -12,7 +12,7 @@ export class ClaimHisTable2Component implements OnInit {
 
 
   @ViewChild(MatPaginator) paginator2: MatPaginator;
-
+  claimHis2Data: any;
   claimHisDataTable2 = new MatTableDataSource<claimHisModel2>(CLIAMHIS_DATA2);
   claimHisTable2 = [
     'Description',
@@ -31,9 +31,26 @@ export class ClaimHisTable2Component implements OnInit {
 
   ngOnInit() {
     this.claimHisDataTable2.paginator = this.paginator2;
+    this.claimHis2Data = CLAIMHIS2[0];
   }
 
 }
+export interface claimHis2 {
+  ExternalNote: string;
+  FaxNoteIntenval: string;
+  NoteToInsuraceExternal: string;
+  AuditNoteIntenval: string;
+}
+export const CLAIMHIS2: claimHis2[] = [
+  {
+  ExternalNote: 'xxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  FaxNoteIntenval: 'xxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  NoteToInsuraceExternal: 'xxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  AuditNoteIntenval: 'xxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  }
+];
+
+
 export interface claimHisModel2 {
   Description: string;
   Day: string;

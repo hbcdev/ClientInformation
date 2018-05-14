@@ -1,0 +1,77 @@
+<h2>{{page_title}}</h2>
+<hr class="hr-style">
+<mat-card>
+
+  <mat-card-content style="height: 800px;">
+    <div style="float: left;padding: 20px;width:50%;">
+
+      <table mat-table #table [dataSource]="callLogDataTable" style="width:100%;">
+
+        <ng-container matColumnDef="NotifyNo">
+          <th class="headerCell" mat-header-cell *matHeaderCellDef>NotifyNo</th>
+          <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.NotifyNo}}</td>
+        </ng-container>
+        <ng-container matColumnDef="TransDate">
+          <th class="headerCell" mat-header-cell *matHeaderCellDef>TransDate</th>
+          <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.TransDate}}</td>
+        </ng-container>
+        <ng-container matColumnDef="AccDate">
+          <th class="headerCell" mat-header-cell *matHeaderCellDef>AccDate</th>
+          <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.AccDate}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hospital">
+          <th class="headerCell" mat-header-cell *matHeaderCellDef>Hospital</th>
+          <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.Hospital}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Charge">
+          <th class="headerCell" mat-header-cell *matHeaderCellDef>Charge</th>
+          <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.Charge}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Paid">
+          <th class="headerCell" mat-header-cell *matHeaderCellDef>Paid</th>
+          <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.Paid}}</td>
+        </ng-container>
+      
+
+        <tr mat-header-row *matHeaderRowDef="callLogTable" style="height: 30px;"></tr>
+        <tr mat-row *matRowDef="let row; columns: callLogTable;" style="height: 30px;" class="row-style"></tr>
+      </table>
+      <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[10]" [showFirstLastButtons]="false">
+      </mat-paginator>
+
+    </div>
+    <div style="float: left;padding: 20px;background: #f3f4f5;width: 40%; overflow-y: auto; border-left: 8px solid #0d6886;border-radius: 5px;">
+
+      <div>
+
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Reason
+          </mat-card-title>
+          <mat-card-content>
+            <span>{{callLog.Reason}}</span>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Note
+          </mat-card-title>
+          <mat-card-content>
+            <span>{{callLog.Note}}</span>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Call File
+          </mat-card-title>
+          <mat-card-content>
+            <span>{{callLog.CallFile}}</span>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>

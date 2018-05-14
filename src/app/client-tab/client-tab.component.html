@@ -5,21 +5,22 @@
         </ng-template>
         <div class="tab-content">
             <p class="p-text">
-                <b>test : </b>
+                <b>Eclusion : </b>
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum consectetur, nobis eius, quos eveniet
                     dolorum distinctio ducimus ea nisi accusamus natus? Tenetur ad ex incidunt assumenda aliquam, non dolor
                     officiis.
                 </span>
             </p>
             <p class="p-text">
-                <b>test : </b>
+                <b>Info Note : </b>
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum consectetur, nobis eius, quos eveniet
                     dolorum distinctio ducimus ea nisi accusamus natus? Tenetur ad ex incidunt assumenda aliquam, non dolor
                     officiis.
                 </span>
             </p>
             <p class="p-text">
-                <b>test : </b>
+                <b>
+                    Notation : </b>
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum consectetur, nobis eius, quos eveniet
                     dolorum distinctio ducimus ea nisi accusamus natus? Tenetur ad ex incidunt assumenda aliquam, non dolor
                     officiis.
@@ -102,34 +103,31 @@
 
             <table mat-table #table [dataSource]="displaySource" style="margin-top:-50px;width:80%;float: left;">
                 <!-- PolicyNo Column -->
-                <ng-container matColumnDef="CardNo">
-                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Card No </th>
-                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.CardNo}} </td>
-                </ng-container>
-                <!-- Plan Column -->
-                <ng-container matColumnDef="IssueDate">
-                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Issue Date </th>
-                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.IssueDate}} </td>
-                </ng-container>
-                <!-- Effective Column -->
-                <ng-container matColumnDef="ExpDate">
-                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Exp Date </th>
-                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.ExpDate}} </td>
-                </ng-container>
-                <!-- Expired Column -->
                 <ng-container matColumnDef="PolicyNo">
                     <th mat-header-cell *matHeaderCellDef class="headerCell"> Policy No </th>
                     <td mat-cell *matCellDef="let element" class="cell-item"> {{element.PolicyNo}} </td>
                 </ng-container>
+                <!-- Plan Column -->
+                <ng-container matColumnDef="Plan">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell">Plan </th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.Plan}} </td>
+                </ng-container>
+                <!-- Effective Column -->
+                <ng-container matColumnDef="Effective">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell">Effective </th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.Effective}} </td>
+                </ng-container>
+                <!-- Expired Column -->
+                <ng-container matColumnDef="Expired">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Expired </th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.Expired}} </td>
+                </ng-container>
                 <!-- PolicyYear Column -->
-                <ng-container matColumnDef="NationID">
-                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Nation ID </th>
-                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.NationID}} </td>
+                <ng-container matColumnDef="PolicyYear">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell">Policy Year </th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.PolicyYear}} </td>
                 </ng-container>
-                <ng-container matColumnDef="PolicyID">
-                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Policy ID </th>
-                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.PolicyID}} </td>
-                </ng-container>
+               
                 <tr mat-header-row *matHeaderRowDef="displayData" style="height: 10px;   "></tr>
                 <tr mat-row *matRowDef="let row; columns: displayData;" style=" height: 10px;"></tr>
             </table>

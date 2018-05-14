@@ -10,6 +10,8 @@ export class AppointmentComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
+
+  appPointData: any;
   page_title = 'Appointment';
   appPointTable = [
     'DueDate',
@@ -23,10 +25,34 @@ export class AppointmentComponent implements OnInit {
   ngOnInit() {
     $('.loading').hide();
     this.appPointDatatable.paginator = this.paginator;
+    this.appPointData = APPOINTDATA_DATA[0];
   }
 
 }
 
+export interface appPointData {
+  CustomerMobile: string;
+  ClinicPhone: string;
+  Receiveby: string;
+  DateReceive: string;
+  IndicationAdmit: string;
+  TreatmentPlan: string;
+  Notetoclinic: string;
+  Note: string;
+}
+
+export const APPOINTDATA_DATA: appPointData[] = [
+  {
+    CustomerMobile: '099-9999999',
+    ClinicPhone: '099-9999999',
+    Receiveby: 'xxxxxxxx xxxxxxxxx',
+    DateReceive: '01/01/61 12:00',
+    IndicationAdmit: 'xxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    TreatmentPlan: 'xxxxxxxxxxxxxxxxxx',
+    Notetoclinic: 'xxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    Note: 'xxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  }
+];
 
 export interface appPointModel {
   DueDate: string;

@@ -10,7 +10,7 @@ export class ClaimHisByNatIDComponent implements OnInit {
     page_title = 'Claim History By NatID';
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-
+    claimHisByNatData: any;
   claimHisDataTable = new MatTableDataSource<claimHisModel>(CLIAMHIS_DATA);
   claimHisTable = [
     'RecieveDate',
@@ -50,12 +50,25 @@ export class ClaimHisByNatIDComponent implements OnInit {
 
   ngOnInit() {
     this.claimHisDataTable.paginator = this.paginator;
+    this.claimHisByNatData = CLAIMHISBYNATDETAIL_DATA[0];
     $('.loading').hide();
   }
 
 }
 
+export interface claimhisByNat {
+  IndicstorOfAdmission: string;
+  TreatmentPlan: string;
+}
+export const CLAIMHISBYNATDETAIL_DATA: claimhisByNat [] = [
+  {
+    IndicstorOfAdmission: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit' +
+      'Corporis quidem est numquam debitis voluptates illum error odio, autem facilis temp',
+    TreatmentPlan: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quidem ' +
+      'est numquam debitis voluptates illum error odio, autem facilis temp',
+  }
 
+];
 export interface claimHisModel {
   RecieveDate: string;
   NotifyNo: string;

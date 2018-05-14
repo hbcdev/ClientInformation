@@ -37,6 +37,7 @@ import { ClaimHisByNatIDComponent } from './claim-his-by-nat-id/claim-his-by-nat
 import { AppointmentComponent } from './appointment/appointment.component';
 import { WebPreauthComponent } from './web-preauth/web-preauth.component';
 import { WebClaimPayComponent } from './web-claim-pay/web-claim-pay.component';
+import { CSCallLogComponent } from './cscall-log/cscall-log.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { WebClaimPayComponent } from './web-claim-pay/web-claim-pay.component';
     AppointmentComponent,
     WebPreauthComponent,
     WebClaimPayComponent,
+    CSCallLogComponent,
     ],
   imports: [
     BrowserModule,
