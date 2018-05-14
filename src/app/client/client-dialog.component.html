@@ -1,0 +1,115 @@
+<div style="z-index: 1000;">
+  <div style="    background: #138496;  height: 33px;  color: #fff;  text-align: center;">
+    <h1 mat-dialog-title>ตารางผลประโยชน์</h1>
+  </div>
+  <div mat-dialog-content style="width:1200px; height: 800px;margin-top:25px">
+    <div style="position: absolute;border-bottom : 1px solid #000;width: 60%">
+      <p class="card-p-text " style="    width: 29.5%;">
+        <b style="font-size: 15px;">Policy : </b>
+        <span>999-99-99XX9-99999 XXX</span>
+      </p>
+      <p class="card-p-text " style="    width: 29.5%;">
+        <b style="font-size: 15px;">Plan : </b>
+        <span>999-99-99XX9-99999 XXX</span>
+      </p>
+      <p class="card-p-text " style="    width: 29.5%;">
+        <b style="font-size: 15px;">Service Type : </b>
+        <span>999-99-99XX9-99999 XXX</span>
+      </p>
+      <p class="card-p-text " style="    width: 29.5%;">
+        <b style="font-size: 15px;">Benefit Code : </b>
+        <span>999-99-99XX9-99999 XXX</span>
+      </p>
+    </div>
+    <div style="margin-top: 100px;margin-left: 110px;width: 100%;">
+      <p class="card-p-text " style="    text-align: center;width: 15%;">
+        <u>
+          <b style="font-size: 15px;">Aggregate </b>
+          <br>
+          <br>
+        </u>
+        <span style="margin-top:15px">999-99-99XX9-99999 XXX</span>
+      </p>
+      <p class="card-p-text " style="    text-align: center;width: 15%;">
+        <u>
+          <b style="font-size: 15px;">Benefit Cover </b>
+          <br>
+          <br>
+        </u>
+        <span style="margin-top:15px">999-99-99XX9-99999 XXX</span>
+      </p>
+      <p class="card-p-text " style="    text-align: center;width: 15%;">
+        <u>
+          <b style="font-size: 15px;">Deductible </b>
+          <br>
+          <br>
+        </u>
+        <span style="margin-top:15px">999-99-99XX9-99999 XXX</span>
+      </p>
+      <p class="card-p-text " style="    text-align: center;width: 15%;">
+        <u>
+          <b style="font-size: 15px;">Copayment </b>
+          <br>
+          <br>
+        </u>
+        <span style="margin-top:15px">999-99-99XX9-99999 XXX</span>
+      </p>
+      <p class="card-p-text " style="    text-align: center;width: 15%;">
+        <u>
+          <b style="font-size: 15px;">FX-Rate </b>
+          <br>
+          <br>
+        </u>
+        <span style="margin-top:15px">999-99-99XX9-99999 XXX</span>
+      </p>
+    </div>
+    <div > 
+
+
+      <table mat-table #table [dataSource]="DialogDataTable" style="width:100%">
+
+        <ng-container matColumnDef="code">
+          <th mat-header-cell *matHeaderCellDef class="headerCell">code</th>
+          <td mat-cell *matCellDef="let elm " class="cell-item">{{elm.code}}</td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef class="headerCell">description</th>
+          <td mat-cell *matCellDef="let elm " class="cell-item">{{elm.description}}</td>
+        </ng-container>
+        <ng-container matColumnDef="day">
+          <th mat-header-cell *matHeaderCellDef class="headerCell">day</th>
+          <td mat-cell *matCellDef="let elm " class="cell-item">{{elm.day}}</td>
+        </ng-container>
+        <ng-container matColumnDef="per">
+          <th mat-header-cell *matHeaderCellDef class="headerCell">per</th>
+          <td mat-cell *matCellDef="let elm " class="cell-item">{{elm.per}}</td>
+        </ng-container>
+        <ng-container matColumnDef="benefitPPO">
+          <th mat-header-cell *matHeaderCellDef class="headerCell">benefitPPO</th>
+          <td mat-cell *matCellDef="let elm " class="cell-item">{{elm.benefitPPO}}</td>
+        </ng-container>
+        <ng-container matColumnDef="benefitOON">
+          <th mat-header-cell *matHeaderCellDef class="headerCell">benefitOON</th>
+          <td mat-cell *matCellDef="let elm " class="cell-item">{{elm.benefitOON}}</td>
+        </ng-container>
+        <ng-container matColumnDef="deductible">
+          <th mat-header-cell *matHeaderCellDef class="headerCell">deductible</th>
+          <td mat-cell *matCellDef="let elm " class="cell-item">{{elm.deductible}}</td>
+        </ng-container>
+        <ng-container matColumnDef="copayment">
+          <th mat-header-cell *matHeaderCellDef class="headerCell">copayment</th>
+          <td mat-cell *matCellDef="let elm " class="cell-item">{{elm.copayment}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="DialogTable" style="height: 8px;   "></tr>
+        <tr mat-row *matRowDef="let row; columns: DialogTable;" class="row-style"></tr>
+      </table>
+
+      <mat-paginator #paginator [pageSize]="3" [pageSizeOptions]="[3]" [showFirstLastButtons]="false">
+      </mat-paginator>
+      <div class="panel">
+        
+      </div>
+    </div>
+  </div>
+</div>

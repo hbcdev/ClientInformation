@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatTableDataSource, MatDialog } from '@angular/material';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
+import { MatPaginator, MatTableDataSource, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import * as $ from 'jquery';
-import { ClientDialogComponent } from '../client-dialog/client-dialog.component';
+// import { ClientDialogComponent } from '../client-dialog/client-dialog.component';
 
 
 
@@ -11,13 +11,13 @@ import { ClientDialogComponent } from '../client-dialog/client-dialog.component'
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent implements OnInit {
-    page_title = 'Client Information';
+  page_title = 'Client Information';
   displayData = ['PolicyNo', 'Plan', 'Effective', 'Expired', 'PolicyYear'];
   displaySource = new MatTableDataSource<Element>(ELEMENT_DATA);
   clientData: any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor (public dialog: MatDialog ) {}
+  constructor(public dialog: MatDialog) { }
   ngOnInit() {
     setTimeout(() => {
       $('.loading').hide();
@@ -27,13 +27,130 @@ export class ClientComponent implements OnInit {
     this.clientData = CLINT_DATA[0];
   }
   openDialog() {
-    this.dialog.open(ClientDialogComponent, {
+    this.dialog.open(ClientDialog, {
       data: {
         animal: 'panda'
       }
     });
   }
 }
+
+
+
+// ****************************** DiaLog ******************
+@Component({
+  selector: 'app-client-dialog',
+  templateUrl: 'client-dialog.component.html',
+  styleUrls: ['./client.component.css']
+})
+export class ClientDialog {
+
+  @ViewChild(MatPaginator) paginat: MatPaginator;
+
+  DialogTable = [
+    'code',
+    'description',
+    'day',
+    'per',
+    'benefitPPO',
+    'benefitOON',
+    'deductible',
+    'copayment',
+  ];
+
+  DialogDataTable = new MatTableDataSource<tableDialogModel>(DIALOGTABLE_DATA) ;
+
+  constructor(
+    public dialogRef: MatDialogRef<ClientDialog>, @Inject(MAT_DIALOG_DATA) public data: any) {
+      this.paginateSet ();
+     }
+
+    paginateSet () {
+      console.log('paginateSet');
+      this.DialogDataTable.paginator = this.paginat;
+    }
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+
+
+}
+
+export interface tableDialogModel {
+  code: any;
+  description: any;
+  day: any;
+  per: any;
+  benefitPPO: any;
+  benefitOON: any;
+  deductible: any;
+  copayment: any;
+}
+
+export const DIALOGTABLE_DATA: tableDialogModel[] = [
+  {
+  code: 'xxxxxxxxx',
+  description: 'xxxxxxxxxxxxxxxxxx',
+  day: '99',
+  per: 'YY',
+  benefitPPO: 'xxxxxxxxx',
+  benefitOON: 'xxxxxxxxx',
+  deductible: 'xxxxxxxxx',
+  copayment: 'xxxxxxxxx',
+},
+  {
+  code: 'xxxxxxxxx',
+  description: 'xxxxxxxxxxxxxxxxxx',
+  day: '99',
+  per: 'YY',
+  benefitPPO: 'xxxxxxxxx',
+  benefitOON: 'xxxxxxxxx',
+  deductible: 'xxxxxxxxx',
+  copayment: 'xxxxxxxxx',
+},
+  {
+  code: 'xxxxxxxxx',
+  description: 'xxxxxxxxxxxxxxxxxx',
+  day: '99',
+  per: 'YY',
+  benefitPPO: 'xxxxxxxxx',
+  benefitOON: 'xxxxxxxxx',
+  deductible: 'xxxxxxxxx',
+  copayment: 'xxxxxxxxx',
+},
+  {
+  code: 'xxxxxxxxx',
+  description: 'xxxxxxxxxxxxxxxxxx',
+  day: '99',
+  per: 'YY',
+  benefitPPO: 'xxxxxxxxx',
+  benefitOON: 'xxxxxxxxx',
+  deductible: 'xxxxxxxxx',
+  copayment: 'xxxxxxxxx',
+},
+  {
+  code: 'xxxxxxxxx',
+  description: 'xxxxxxxxxxxxxxxxxx',
+  day: '99',
+  per: 'YY',
+  benefitPPO: 'xxxxxxxxx',
+  benefitOON: 'xxxxxxxxx',
+  deductible: 'xxxxxxxxx',
+  copayment: 'xxxxxxxxx',
+},
+  {
+  code: 'xxxxxxxxx',
+  description: 'xxxxxxxxxxxxxxxxxx',
+  day: '99',
+  per: 'YY',
+  benefitPPO: 'xxxxxxxxx',
+  benefitOON: 'xxxxxxxxx',
+  deductible: 'xxxxxxxxx',
+  copayment: 'xxxxxxxxx',
+},
+];
+
 export interface Element {
   PolicyNo: string;
   Plan: string;
@@ -120,4 +237,4 @@ export const CLINT_DATA: clientModel[] = [{
   piadDate: '30',
   reinstableDate: '31',
   lastExpiry: '32',
-} ]
+}]

@@ -22,7 +22,7 @@ import {
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './search/search.component';
-import { ClientComponent } from './client/client.component';
+import { ClientComponent, ClientDialog } from './client/client.component';
 import { ClientTabComponent } from './client-tab/client-tab.component';
 import { ClaimDisabilityComponent } from './claim-disability/claim-disability.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -58,6 +58,7 @@ import { ClientDialogComponent } from './client-dialog/client-dialog.component';
     WebClaimPayComponent,
     CSCallLogComponent,
     ClientDialogComponent,
+    ClientDialog
     ],
   imports: [
     BrowserModule,
@@ -82,6 +83,7 @@ import { ClientDialogComponent } from './client-dialog/client-dialog.component';
     AppRoutingModule,
   ],
   providers: [],
+  entryComponents: [ClientDialog],
   // entryComponents: [DialogDataExample, DialogDataExampleDialog],
   // declarations: [DialogDataExample, DialogDataExampleDialog],
   bootstrap: [MyNavComponent]

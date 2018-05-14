@@ -11,7 +11,6 @@ export interface Element {
     PolicyYear: string;
 }
 // menu 1 client data
-
 export interface clientModel {
     cradID: string;
     name: string;
@@ -46,6 +45,19 @@ export interface clientModel {
     reinstableDate: string;
     lastExpiry: string;
 }
+// menu 1 Dialog
+export interface tableDialogModel {
+    code: any;
+    description: any;
+    day: any;
+    per: any;
+    benefitPPO: any;
+    benefitOON: any;
+    deductible: any;
+    copayment: any;
+  }
+
+
 // menu 1 tab data
 export interface tabData {
     tab1: {
