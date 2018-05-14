@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular6</title>
+  <base href="./">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      background: #0D6886;
+    }
+
+    footer {
+      background: #0D6886;
+      color: #fff;
+      text-align: center;
+
+      /* margin-top: 665px; */
+    }
+
+    .splash {
+      margin: 22% auto;
+      width: 500px;
+      height: 60px;
+      text-align: center;
+      font-size: 38px;
+      font-weight: 500;
+      color: #fff;
+
+      -webkit-animation: fadeinout 4s infinite forwards;
+      animation: fadeinout 4s infinite forwards;
+    }
+
+    @-webkit-keyframes fadeinout {
+      0%,
+      100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeinout {
+      0%,
+      100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <app-my-nav>
+  <div class="splash">Client Information. </div>
+  </app-my-nav>
+</body>
+<footer>&copy; HBC 2018</footer>
+
+</html>

@@ -1,0 +1,44 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.headerCell {
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid #b1b1b140;
+    padding: 5px;
+}
+
+.cell-item {
+    font-size: 12px;
+    padding: 5px;
+    border: 1px solid #b1b1b140;
+}
+.row-style {
+    height: 3px;
+    cursor: pointer;
+}
+
+.row-style:hover {
+    background: #afafaf1f;
+}
+.panel {
+    width:38%;
+    float: left;
+    padding:10px;
+    line-height: 1.5;
+    border: 2px solid #49d84757;
+    margin-left: 8px;
+    margin-top: 5px;
+    height: 57px;
+    font-size: 14px;
+    background: #a1ff7112;
+}

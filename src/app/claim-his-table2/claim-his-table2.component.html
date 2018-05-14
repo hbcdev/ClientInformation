@@ -1,0 +1,77 @@
+<table mat-table #table [dataSource]="claimHisDataTable2">
+    <ng-container matColumnDef="Description">
+      <th class="headerCell" mat-header-cell *matHeaderCellDef>Description</th>
+      <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.Description}}</td>
+    </ng-container>
+    <ng-container matColumnDef="Day">
+      <th class="headerCell" mat-header-cell *matHeaderCellDef>Day</th>
+      <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.Day}}</td>
+    </ng-container>
+    <ng-container matColumnDef="Per">
+      <th class="headerCell" mat-header-cell *matHeaderCellDef>Per</th>
+      <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.Per}}</td>
+    </ng-container>
+    <ng-container matColumnDef="Charge">
+      <th class="headerCell" mat-header-cell *matHeaderCellDef>Charge</th>
+      <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.Charge}}</td>
+    </ng-container>
+    <ng-container matColumnDef="Discount">
+      <th class="headerCell" mat-header-cell *matHeaderCellDef>Discount</th>
+      <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.Discount}}</td>
+    </ng-container>
+    <ng-container matColumnDef="NoCover">
+      <th class="headerCell" mat-header-cell *matHeaderCellDef>NoCover</th>
+      <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.NoCover}}</td>
+    </ng-container>
+    <ng-container matColumnDef="Exgratia">
+      <th class="headerCell" mat-header-cell *matHeaderCellDef>Exgratia</th>
+      <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.Exgratia}}</td>
+    </ng-container>
+    <ng-container matColumnDef="BenefitPaid">
+      <th class="headerCell" mat-header-cell *matHeaderCellDef>BenefitPaid</th>
+      <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.BenefitPaid}}</td>
+    </ng-container>
+    <ng-container matColumnDef="DeducPaid">
+      <th class="headerCell" mat-header-cell *matHeaderCellDef>DeducPaid</th>
+      <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.DeducPaid}}</td>
+    </ng-container>
+    <ng-container matColumnDef="ClientPaid">
+      <th class="headerCell" mat-header-cell *matHeaderCellDef>ClientPaid</th>
+      <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.ClientPaid}}</td>
+    </ng-container>
+    <ng-container matColumnDef="Note">
+      <th class="headerCell" mat-header-cell *matHeaderCellDef>Note</th>
+      <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.Note}}</td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="claimHisTable2" style="height: 30px;background: #0d68861c"></tr>
+    <tr mat-row *matRowDef="let row; columns: claimHisTable2;" style="height: 30px;" class="row-style"></tr>
+  </table>
+  <mat-paginator #paginator [pageSize]="8" [pageSizeOptions]="[8]" [showFirstLastButtons]="false">
+    </mat-paginator>  
+
+    
+
+  <div style="margin-top: -40px;">
+      <div class="panel" style="margin-left: 0">
+          <b>External Note : </b>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quidem est numquam debitis voluptates
+        illum error odio, autem facilis temporibus voluptas laboriosam iste blanditiis minus, voluptatum rem consequuntur doloremque
+        magni.
+      </div>
+      <div class="panel">
+          <b>Fax Note ( Intenval ) :</b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quidem est numquam debitis voluptates
+        illum error odio, autem facilis temporibus voluptas laboriosam iste blanditiis minus, voluptatum rem consequuntur doloremque
+        magni.
+      </div>
+      <div class="panel" style="margin-left: 0">
+          <b>Note ToInsurace ( External) :</b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quidem est numquam debitis voluptates
+        illum error odio, autem facilis temporibus voluptas laboriosam iste blanditiis minus, voluptatum rem consequuntur doloremque
+        magni.
+      </div>
+      <div class="panel">
+         <b> Audit Note ( Intenval ) :</b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quidem est numquam debitis voluptates
+        illum error odio, autem facilis temporibus voluptas laboriosam iste blanditiis minus, voluptatum rem consequuntur doloremque
+        magni.
+      </div>
+    </div>

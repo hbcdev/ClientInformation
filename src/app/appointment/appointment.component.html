@@ -1,0 +1,102 @@
+<h2>{{page_title}}</h2>
+<hr class="hr-style">
+<mat-card>
+  <mat-card-content style="height: 800px">
+    <div class="col-1">
+      <table mat-table #table [dataSource]="appPointDatatable" style="width:100%;">
+
+        <ng-container matColumnDef="DueDate">
+          <th class="headerCell" mat-header-cell *matHeaderCellDef>DueDate</th>
+          <td class="cell-teim" mat-cell *matCellDef="let elm ">{{elm.DueDate}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Hospital">
+          <th class="headerCell" mat-header-cell *matHeaderCellDef>Hospital</th>
+          <td class="cell-teim" mat-cell *matCellDef="let elm ">{{elm.Hospital}} </td>
+        </ng-container>
+        <ng-container matColumnDef="TreantmentCode">
+          <th class="headerCell" mat-header-cell *matHeaderCellDef>TreantmentCode</th>
+          <td class="cell-teim" mat-cell *matCellDef="let elm ">{{elm.TreantmentCode}} </td>
+        </ng-container>
+        <ng-container matColumnDef="RecieveCallDate">
+          <th class="headerCell" mat-header-cell *matHeaderCellDef>RecieveCallDate</th>
+          <td class="cell-teim" mat-cell *matCellDef="let elm ">{{elm.RecieveCallDate}} </td>
+        </ng-container>
+        <ng-container matColumnDef="AdmitDate">
+          <th class="hederCell" mat-header-cell *matHeaderCellDef>AdmitDate</th>
+          <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.AdmitDate}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="appPointTable" style="height: 30px;"></tr>
+        <tr mat-row *matRowDef="let row; columns: appPointTable;" style="height: 30px;" class="row-style"></tr>
+      </table>
+      <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[10]" [showFirstLastButtons]="true">
+      </mat-paginator>
+    </div>
+    <div class="col-2">
+      <div>
+        <p class="p-text-tab-3" style="margin-left: 20px;">
+          <b>Customer Mobile : </b>
+          <span>099-9999999</span>
+        </p>
+        <p class="p-text-tab-3">
+          <b>Clinic Phone : </b>
+          <span>099-9999999</span>
+        </p>
+        <p class="p-text-tab-3">
+          <b>Receive by : </b>
+          <span>xxxxxxxxx xxxxxxxxxx</span>
+        </p>
+        <p class="p-text-tab-3">
+          <b>Date Receive : </b>
+          <span>01/01/61 12:00</span>
+        </p>
+
+      </div>
+      <div style="margin-top: 100px">
+
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Indication Admit
+          </mat-card-title>
+          <mat-card-content>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus placeat non odio iste ipsum, nulla eaque nam
+              voluptatum similique recusandae praesentium illo quisquam voluptatem, nobis incidunt eum, asperiores explicabo
+              atque. </span>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Treatment Plan
+          </mat-card-title>
+          <mat-card-content>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus placeat non odio iste ipsum, nulla eaque nam
+              voluptatum similique recusandae praesentium illo quisquam voluptatem, nobis incidunt eum, asperiores explicabo
+              atque. </span>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Note to clinic
+          </mat-card-title>
+          <mat-card-content>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus placeat non odio iste ipsum, nulla eaque nam
+              voluptatum similique recusandae praesentium illo quisquam voluptatem, nobis incidunt eum, asperiores explicabo
+              atque. </span>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Note
+          </mat-card-title>
+          <mat-card-content>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus placeat non odio iste ipsum, nulla eaque nam
+              voluptatum similique recusandae praesentium illo quisquam voluptatem, nobis incidunt eum, asperiores explicabo
+              atque. </span>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

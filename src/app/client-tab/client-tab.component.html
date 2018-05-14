@@ -1,0 +1,300 @@
+<mat-tab-group class="tab-group">
+    <mat-tab label="Tab 1">
+        <ng-template mat-tab-label>
+            <div class="tab-label"> Exclusion & Notation</div>
+        </ng-template>
+        <div class="tab-content">
+            <p class="p-text">
+                <b>test : </b>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum consectetur, nobis eius, quos eveniet
+                    dolorum distinctio ducimus ea nisi accusamus natus? Tenetur ad ex incidunt assumenda aliquam, non dolor
+                    officiis.
+                </span>
+            </p>
+            <p class="p-text">
+                <b>test : </b>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum consectetur, nobis eius, quos eveniet
+                    dolorum distinctio ducimus ea nisi accusamus natus? Tenetur ad ex incidunt assumenda aliquam, non dolor
+                    officiis.
+                </span>
+            </p>
+            <p class="p-text">
+                <b>test : </b>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum consectetur, nobis eius, quos eveniet
+                    dolorum distinctio ducimus ea nisi accusamus natus? Tenetur ad ex incidunt assumenda aliquam, non dolor
+                    officiis.
+                </span>
+            </p>
+        </div>
+    </mat-tab>
+    <mat-tab label="Tab 2">
+        <ng-template mat-tab-label>
+            <div class="tab-label"> ระงับบัตรเครดิต</div>
+        </ng-template>
+        <div class="tab-content">
+            No Data...
+        </div>
+    </mat-tab>
+    <mat-tab label="Tab 3">
+        <ng-template mat-tab-label>
+            <div class="tab-label"> Member Detail</div>
+        </ng-template>
+        <div class="tab-content">
+            <p class="p-text-tab-3">
+                <b>Permium : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Waitting : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Mobile : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Payee : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Client No : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Group : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Address : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Waitting : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Note : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Old Policy : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Policy ID : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+        </div>
+    </mat-tab>
+    <mat-tab label="Tab 4">
+        <ng-template mat-tab-label>
+            <div class="tab-label">Card Adjust</div>
+        </ng-template>
+        <div class="tab-content">
+            <p>
+                <b>Old Card No : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p style="margin-right: 40px;float: left;">
+                <b>Adjust Date : </b>
+                <span>10/01/61 12:00</span>
+            </p>
+
+            <table mat-table #table [dataSource]="displaySource" style="margin-top:-50px;width:80%;float: left;">
+                <!-- PolicyNo Column -->
+                <ng-container matColumnDef="CardNo">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Card No </th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.CardNo}} </td>
+                </ng-container>
+                <!-- Plan Column -->
+                <ng-container matColumnDef="IssueDate">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Issue Date </th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.IssueDate}} </td>
+                </ng-container>
+                <!-- Effective Column -->
+                <ng-container matColumnDef="ExpDate">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Exp Date </th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.ExpDate}} </td>
+                </ng-container>
+                <!-- Expired Column -->
+                <ng-container matColumnDef="PolicyNo">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Policy No </th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.PolicyNo}} </td>
+                </ng-container>
+                <!-- PolicyYear Column -->
+                <ng-container matColumnDef="NationID">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Nation ID </th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.NationID}} </td>
+                </ng-container>
+                <ng-container matColumnDef="PolicyID">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Policy ID </th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.PolicyID}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayData" style="height: 10px;   "></tr>
+                <tr mat-row *matRowDef="let row; columns: displayData;" style=" height: 10px;"></tr>
+            </table>
+        </div>
+    </mat-tab>
+    <mat-tab label="Tab 5">
+        <ng-template mat-tab-label>
+            <div class="tab-label">Payment</div>
+        </ng-template>
+        <div class="tab-content">
+
+
+            <table mat-table #table [dataSource]="paymentTableData" style="width:100%;">
+                <!-- PolicyNo Column -->
+                <ng-container matColumnDef="Period">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Period </th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.Period}} </td>
+                </ng-container>
+                <!-- Plan Column -->
+                <ng-container matColumnDef="DueDate">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Due Date </th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.DueDate}} </td>
+                </ng-container>
+                <!-- Effective Column -->
+                <ng-container matColumnDef="PiadDate">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Piad Date </th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.PiadDate}} </td>
+                </ng-container>
+                <!-- Expired Column -->
+                <ng-container matColumnDef="Premium">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Premium </th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.Premium}} </td>
+                </ng-container>
+                <!-- PolicyYear Column -->
+                <ng-container matColumnDef="Filename">
+                    <th mat-header-cell *matHeaderCellDef class="headerCell"> Filename</th>
+                    <td mat-cell *matCellDef="let element" class="cell-item"> {{element.Filename}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="paymentTable" style="height: 20px;   "></tr>
+                <tr mat-row *matRowDef="let row; columns: paymentTable;" style=" height: 20px;"></tr>
+            </table>
+        </div>
+    </mat-tab>
+    <mat-tab label="Tab 6">
+        <ng-template mat-tab-label>
+            <div class="tab-label">Agent Information</div>
+        </ng-template>
+        <div class="tab-content">
+            <p class="p-text-tab-3">
+                <b>Prefer Agent : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Agent : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Agency : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Agent Code : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Address : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Agency Code : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+
+        </div>
+    </mat-tab>
+    <mat-tab label="Tab 7">
+        <ng-template mat-tab-label>
+            <div class="tab-label">Other</div>
+        </ng-template>
+        <div class="tab-content">
+            <p class="p-text-tab-3">
+                <b>Quotation : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Old Grace Period : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>New Recieve : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Cancle Recieve: </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Last Update User : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Due Date : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>New Upload : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Cancle Upload : </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+
+            <p class="p-text-tab-3" style="width:16%;">
+                <b>Last Update Date: </b>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+
+        </div>
+    </mat-tab>
+    <mat-tab label="Tab 8">
+        <ng-template mat-tab-label>
+            <div class="tab-label">Call Log</div>
+        </ng-template>
+        <div class="tab-content">
+            <p style="    margin-top: -20px;">
+                <b>Call : </b>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="call" value="">
+                </mat-form-field>
+            </p>
+            <p>
+                <b>Date : </b>
+                <span>01/01/61 12:00</span>
+            </p>
+            <p>
+                <mat-radio-group>
+                    <mat-radio-button value="1">In</mat-radio-button>
+                    <mat-radio-button value="2" style="margin-left:20px;">Out</mat-radio-button>
+                </mat-radio-group>
+                <span style="margin-left:20px;">xxxxxxxxxxxxxxx</span>
+            </p>
+            <p>
+                <span>xxxxxxxxxxxxxxx</span>
+            </p>
+            <div style="overflow: auto;float: left;width: 30%;margin-top: -160px; margin-left: 250px; height: 180px;">
+                <mat-selection-list #shoes>
+                    <mat-list-option style="border:1px solid #b9b9b9b8;height: 30px;">123</mat-list-option>
+                    <mat-list-option style="border:1px solid #b9b9b9b8;height: 30px;">456</mat-list-option>
+                    <mat-list-option style="border:1px solid #b9b9b9b8;height: 30px;">789</mat-list-option>
+                </mat-selection-list>
+            </div>
+            <div style="overflow: auto;float: left;width: 14%;margin-top: -160px; margin-left: 50px; height: 180px;">
+                <mat-form-field>
+                    <textarea matInput placeholder="ข้อความ" rows="5" style="background-color: #b9b9b9b8"></textarea>
+                </mat-form-field>
+
+            </div>
+            <div style="overflow: auto;float: left;width: 10%;margin-top: -160px; margin-left: 50px; height: 180px;">
+                <button mat-fab color="warn" style="margin: 27px; width: 80px;height: 80px;background: #0b8a45;font-size: 16px;font-weight: 600;">Save</button>
+            </div>
+        </div>
+    </mat-tab>
+
+</mat-tab-group>

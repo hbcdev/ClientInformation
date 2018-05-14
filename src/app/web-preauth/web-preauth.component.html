@@ -1,0 +1,42 @@
+<h2>{{page_title}}</h2>
+<hr class="hr-style">
+<mat-card>
+  <mat-card-content>
+    <table mat-table #table [dataSource]="preAuthDataTable" style="width:100%;">
+
+
+      <ng-container matColumnDef="PreauthNo">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>PreauthNo</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm " > {{elm.PreauthNo}}</td>
+      </ng-container>
+      <ng-container matColumnDef="SwipeDate">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>SwipeDate</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm " > {{elm.SwipeDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="CardNo">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>CardNo</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm " > {{elm.CardNo}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Hospital">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Hospital</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm " > {{elm.Hospital}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Approved">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Approved</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm " > {{elm.Approved}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Result">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Result</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm " > {{elm.Result}}</td>
+      </ng-container>
+ 
+
+      <tr mat-header-row *matHeaderRowDef="preAuthTable" style="height: 30px;"></tr>
+      <tr mat-row *matRowDef="let row; columns: preAuthTable;" style="height: 30px;" class="row-style"></tr>
+    </table>
+    <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[10]" [showFirstLastButtons]="true">
+    </mat-paginator>
+
+    
+  </mat-card-content>
+</mat-card>

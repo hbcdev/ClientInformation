@@ -1,0 +1,53 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="loading">
+  <div class="sk-circle">
+    <div class="sk-circle1 sk-child"></div>
+    <div class="sk-circle2 sk-child"></div>
+    <div class="sk-circle3 sk-child"></div>
+    <div class="sk-circle4 sk-child"></div>
+    <div class="sk-circle5 sk-child"></div>
+    <div class="sk-circle6 sk-child"></div>
+    <div class="sk-circle7 sk-child"></div>
+    <div class="sk-circle8 sk-child"></div>
+    <div class="sk-circle9 sk-child"></div>
+    <div class="sk-circle10 sk-child"></div>
+    <div class="sk-circle11 sk-child"></div>
+    <div class="sk-circle12 sk-child"></div>
+    <p style="z-index: 120;color:#fff;margin: 30px 0 0 14px;">Loading</p>
+  </div>
+</div>
+<div class="mat-toolbar-height">
+  <mat-toolbar class="tool-bar-info " style="height: 50px">
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()" class="menu-font" style="  margin-top:12px;">
+        Menu
+      </button>
+    </div>
+    <span class="toolbar-title">Client Information</span>
+  </mat-toolbar>
+</div>
+
+<mat-drawer-container class="example-container" style="height: 1024px;margin-left: -10px">
+  <mat-drawer #drawer class="example-sidenav" mode="side" style="background-color: #0D6886;     margin-left: 10px;">
+    <mat-list>
+      <mat-list-item routerLink="/client" id="m1" class="menu-list" style="color:#fff;" (click)="check_menu('Client Information')">
+        Client Information </mat-list-item>
+      <mat-list-item routerLink="/ClaimDisability" id="m2" class="menu-list" style="color:#fff;" (click)="check_menu('Claim Disability')">
+        Claim Disability </mat-list-item>
+      <mat-list-item routerLink="/PreCer" id="m2" class="menu-list" style="color:#fff;" (click)="check_menu('Pre-certification')">
+      Pre-certification </mat-list-item>
+      <mat-list-item routerLink="/ClaimHis" id="m3" class="menu-list" style="color:#fff;" (click)="check_menu('Claim History')"> Claim History </mat-list-item>
+      <mat-list-item routerLink="/ClaimHisByNat" id="m5" class="menu-list" style="color:#fff;" (click)="check_menu('Claim History By NatID')"> Claim History By NatID </mat-list-item>
+      <mat-list-item routerLink="/appPoint" id="m6" class="menu-list" style="color:#fff;" (click)="check_menu('Appointment')"> Appointment </mat-list-item>
+      <mat-list-item routerLink="/Webpreauth" id="m7" class="menu-list" style="color:#fff;" (click)="check_menu('Web Preauth')"> Web Preauth </mat-list-item>
+      <mat-list-item routerLink="/ClaimPay" id="m8" class="menu-list" style="color:#fff;" (click)="check_menu('Web Claim Payment')"> Web Claim Payment </mat-list-item>
+      <mat-list-item id="m9" class="menu-list" style="color:#fff;" (click)="check_menu('CS Call Log')"> CS Call Log </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <div class="search-box">
+    <app-search></app-search>
+  </div>
+  <div class="containner">  
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

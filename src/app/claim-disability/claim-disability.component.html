@@ -1,0 +1,64 @@
+<h2>{{page_title}}</h2>
+<hr class="hr-style">
+<mat-card>
+  <mat-card-content style="padding: 10px;">
+    <div style="display: flex; flex-direction: column; min-width: 300px;overflow: auto;height: 120px">
+    <table mat-table #table [dataSource]="mapCliamdis" style="width:100%;">
+      <!-- PolicyNo Column -->
+      <ng-container matColumnDef="NotifyNo">
+        <th mat-header-cell *matHeaderCellDef class="headerCell">Notify No</th>
+        <td mat-cell *matCellDef="let elm" class="cell-item"> {{elm.NotifyNo}}</td>
+      </ng-container>
+      <ng-container matColumnDef="AccDate">
+        <th mat-header-cell *matHeaderCellDef class="headerCell">Acc Date</th>
+        <td mat-cell *matCellDef="let elm" class="cell-item"> {{elm.AccDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="AdmitDate">
+        <th mat-header-cell *matHeaderCellDef class="headerCell">Admit Date</th>
+        <td mat-cell *matCellDef="let elm" class="cell-item"> {{elm.AdmitDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Discharge">
+        <th mat-header-cell *matHeaderCellDef class="headerCell" style="text-align: right">Discharge</th>
+        <td mat-cell *matCellDef="let elm" class="cell-item" style="text-align: right"> {{elm.Discharge}}</td>
+      </ng-container>
+      <ng-container matColumnDef="ClaimType">
+        <th mat-header-cell *matHeaderCellDef class="headerCell">Claim Type</th>
+        <td mat-cell *matCellDef="let elm" class="cell-item"> {{elm.ClaimType}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Diags">
+        <th mat-header-cell *matHeaderCellDef class="headerCell" style="text-align: right"> Diags</th>
+        <td mat-cell *matCellDef="let elm" class="cell-item" style="text-align: right"> {{elm.Diags}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Charge">
+        <th mat-header-cell *matHeaderCellDef class="headerCell" style="text-align: right">Charge</th>
+        <td mat-cell *matCellDef="let elm" class="cell-item" style="text-align: right"> {{elm.Charge}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Benefit">
+        <th mat-header-cell *matHeaderCellDef class="headerCell" style="text-align: right">Benefit</th>
+        <td mat-cell *matCellDef="let elm" class="cell-item" style="text-align: right"> {{elm.Benefit}}</td>
+      </ng-container>
+      <ng-container matColumnDef="EndDate">
+        <th mat-header-cell *matHeaderCellDef class="headerCell">End Date</th>
+        <td mat-cell *matCellDef="let elm" class="cell-item"> {{elm.EndDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="DeductiblePaidaid">
+        <th mat-header-cell *matHeaderCellDef class="headerCell" style="text-align: right" >Deductible Paid</th>
+        <td mat-cell *matCellDef="let elm" class="cell-item" style="text-align: right"> {{elm.DeductiblePaidaid}}</td>
+      </ng-container>
+      <ng-container matColumnDef="ClientPaid">
+        <th mat-header-cell *matHeaderCellDef class="headerCell" style="text-align: right">Client Paid</th>
+        <td mat-cell *matCellDef="let elm" class="cell-item" style="text-align: right"> {{elm.ClientPaid}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="cliamDisTable" style="height: 20px;"></tr>
+      <tr mat-row *matRowDef="let row; columns: cliamDisTable;" class="row-style" style="height: 20px;"></tr>
+    </table>
+  </div>
+    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5]" [showFirstLastButtons]="false">
+    </mat-paginator>
+  
+        <app-summary-benefit-table [tableData]=""></app-summary-benefit-table>
+       <app-claim-detail-table [tableData]=""></app-claim-detail-table>
+
+ </mat-card-content>
+</mat-card> 

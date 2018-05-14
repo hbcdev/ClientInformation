@@ -1,0 +1,55 @@
+<h2>{{page_title}}</h2>
+<hr class="hr-style">
+<mat-card style="height: 800px;">
+    <mat-card-subtitle style="text-align: right;margin-top: -44px;">
+        <span class="span-h">
+            <span class="tabcolor-span" style="background-color: #0fb340be ;color:#66666600;border:1px solid #7b7b7b;">xx</span> วางบิลแล้ว</span>
+        <span class="span-h">
+          <span class="tabcolor-span" style="background-color: #ff000080 ;color:#ff00000a;border:1px solid #7b7b7b;">xx</span> Void Payment</span>
+       
+       
+      </mat-card-subtitle>
+  <mat-card-content>
+    <table mat-table #table [dataSource]="claimPayDataTable"  style="width:100%;">
+
+        <ng-container matColumnDef="NotifyNo">
+          <th  mat-header-cell *matHeaderCellDef>NotifyNo</th>
+          <td  mat-cell *matCellDef="let elm">{{elm.NotifyNo}}</td>
+        </ng-container>
+        <ng-container matColumnDef="TransDate">
+          <th  mat-header-cell *matHeaderCellDef>TransDate</th>
+          <td  mat-cell *matCellDef="let elm">{{elm.TransDate}}</td>
+        </ng-container>
+        <ng-container matColumnDef="AccDate">
+          <th  mat-header-cell *matHeaderCellDef>AccDate</th>
+          <td  mat-cell *matCellDef="let elm">{{elm.AccDate}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hospital">
+          <th  mat-header-cell *matHeaderCellDef>Hospital</th>
+          <td  mat-cell *matCellDef="let elm">{{elm.Hospital}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Charge">
+          <th  mat-header-cell *matHeaderCellDef>Charge</th>
+          <td  mat-cell *matCellDef="let elm">{{elm.Charge}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Paid">
+          <th  mat-header-cell *matHeaderCellDef>Paid</th>
+          <td  mat-cell *matCellDef="let elm">{{elm.Paid}}</td>
+        </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="claimPayTable" style="height: 30px;background: #0d68861c"></tr>
+      <tr mat-row *matRowDef="let row; columns: claimPayTable;" style="height: 30px;" class="row-style"></tr>
+    </table>
+    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5]" [showFirstLastButtons]="false">
+    </mat-paginator>
+
+    <div>
+        <div class="panel">
+          <b>Indication Admit :</b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quidem est numquam
+          debitis voluptates illum error odio, autem facilis temporibus voluptas laboriosam iste blanditiis minus, voluptatum
+          rem consequuntur doloremque magni.
+        </div>
+      
+      </div>
+  </mat-card-content>
+</mat-card>

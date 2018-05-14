@@ -1,0 +1,47 @@
+.span-h {
+    padding: 8px;
+    font-size: 12px;
+}
+
+.headerCell {
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid #b1b1b140;
+    padding: 5px;
+}
+
+.cell-item {
+    font-size: 12px;
+    padding: 5px;
+    border: 1px solid #b1b1b140;
+}
+
+.row-style {
+    height: 3px;
+    cursor: pointer;
+}
+
+.row-style:hover {
+    background: #afafaf1f;
+}
+
+.p-text-tab-3 {
+    /* width: 10%; */
+    float: left;
+    margin-left: 3%;
+    line-height: 1.5;
+}
+
+.card-panel {
+    float: left;
+    margin-top: 10px;
+    width: 21%;
+    height: 100px;
+    overflow: auto;
+    margin-left: 10px;
+}
+
+.card-panel-title {
+    font-size: 18px;
+    font-weight: 600;
+}

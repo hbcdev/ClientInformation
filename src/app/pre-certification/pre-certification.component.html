@@ -1,0 +1,159 @@
+<h2>{{page_title}}</h2>
+<hr class="hr-style">
+<mat-card>
+  <mat-card-subtitle style="text-align: right;margin-top: -44px;">
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #ff000080 ;color:#ff00000a;border:1px solid #7b7b7b;">xx</span> Deny</span>
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #6666664d ;color:#66666600;border:1px solid #7b7b7b;">xx</span> Fax Dam Pass</span>
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #fd67ba40 ;color:#fd67b910;border:1px solid #7b7b7b;">xx</span> Cancle</span>
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #eaeaea3b ;color:#eaeaea11;border:1px solid #7b7b7b;">xx</span> Wait for Fax Claim</span>
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #663bc988 ;color:#663bc900;border:1px solid #7b7b7b;">xx</span> รับสภาพนี้</span>
+  </mat-card-subtitle>
+
+  <mat-card-content style="height: 800px;">
+    <div style="float: left;padding: 20px;width:100%;">
+
+      <table mat-table #table [dataSource]="preCerDataTable" style="width:100%;">
+
+        <ng-container matColumnDef="NotifyNo">
+          <th class="hederCell" mat-header-cell *matHeaderCellDef>NotifyNo</th>
+          <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.NotifyNo}}</td>
+        </ng-container>
+        <ng-container matColumnDef="NotifyDate">
+          <th class="hederCell" mat-header-cell *matHeaderCellDef>NotifyDate</th>
+          <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.NotifyDate}}</td>
+        </ng-container>
+        <ng-container matColumnDef="PolicyNo">
+          <th class="hederCell" mat-header-cell *matHeaderCellDef>PolicyNo</th>
+          <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.PolicyNo}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Plan">
+          <th class="hederCell" mat-header-cell *matHeaderCellDef>Plan</th>
+          <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.Plan}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hospital">
+          <th class="hederCell" mat-header-cell *matHeaderCellDef>Hospital</th>
+          <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.Hospital}}</td>
+        </ng-container>
+        <ng-container matColumnDef="AdmitDate">
+          <th class="hederCell" mat-header-cell *matHeaderCellDef>AdmitDate</th>
+          <td class="cell-item" mat-cell *matCellDef="let elm">{{elm.AdmitDate}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="preCerTable" style="height: 30px;"></tr>
+        <tr mat-row *matRowDef="let row; columns: preCerTable;" style="height: 30px;" class="row-style"></tr>
+      </table>
+      <mat-paginator #paginator [pageSize]="8" [pageSizeOptions]="[8]" [showFirstLastButtons]="false">
+      </mat-paginator>
+
+    </div>
+    <div style="float: left;padding: 20px;background: #663bc988;width:98%;overflow-y:auto;">
+      <div>
+        <p class="p-text-tab-3" style="margin-left: 10px;">
+          <b>Precert By : </b>
+          <span>{{preCerDAta.PrecertBy}}</span>
+        </p>
+        <p class="p-text-tab-3">
+          <b>Notify Date : </b>
+          <span>{{preCerDAta.NotifyDate}}</span>
+        </p>
+        <p class="p-text-tab-3">
+          <b>Audit By : </b>
+          <span>{{preCerDAta.AuditBy}}</span>
+        </p>
+        <p class="p-text-tab-3">
+          <b>Date of birth : </b>
+          <span>{{preCerDAta.DateOfBirth}}</span>
+        </p>
+        <p class="p-text-tab-3">
+          <b>Cancle By : </b>
+          <span>{{preCerDAta.CancelBy}}</span>
+        </p>
+        <p class="p-text-tab-3">
+          <b>Cancle Date : </b>
+          <span>{{preCerDAta.CancelDate}}</span>
+        </p>
+        <p class="p-text-tab-3">
+          <b>Status : </b>
+          <span>{{preCerDAta.Status}}</span>
+        </p>
+      </div>
+      <div>
+
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Indicstor of Admission
+          </mat-card-title>
+          <mat-card-content>
+            <span>{{preCerDAta.IndicstorOfAdmission}}</span>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Treatment Plan
+          </mat-card-title>
+          <mat-card-content>
+            <span>{{preCerDAta.TreamentPlan}}</span>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Note
+          </mat-card-title>
+          <mat-card-content>
+            <span>{{preCerDAta.Note}}</span>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Note To Insurance
+          </mat-card-title>
+          <mat-card-content>
+            <span>{{preCerDAta.NoteToInsurance}}</span>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Concurrent Review
+          </mat-card-title>
+
+          <mat-card-content>
+            <span>{{preCerDAta.ConcurrentReview}}</span>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Exgratia Note
+          </mat-card-title>
+          <mat-card-content>
+            <span>{{preCerDAta.ExgratiaNore}}</span>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Commnet
+          </mat-card-title>
+          <mat-card-content>
+            <span>{{preCerDAta.Comment}}</span>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card-panel">
+          <mat-card-title class="card-panel-title">
+            Cancel Note
+          </mat-card-title>
+          <mat-card-content>
+            <span>{{preCerDAta.CancelNote}}</span>
+          </mat-card-content>
+        </mat-card>
+
+
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>

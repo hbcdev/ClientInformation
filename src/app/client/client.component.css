@@ -1,0 +1,88 @@
+.card-contain {
+    height: 800px;
+    background: #f90000c7;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-height: 500px;
+    overflow: none;
+}
+
+.mat-paginator-container {
+    min-height: 30px;
+    height: 30px;
+}
+
+.headerCell {
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid #b1b1b140;
+    padding: 5px;
+}
+
+.cell-item {
+    font-size: 12px;
+    padding: 5px;
+    border: 1px solid #b1b1b140;
+}
+
+.span-h {
+    padding: 8px;
+    font-size: 12px;
+}
+
+.tabcolor-span {
+    font-size: 10px;
+    border: 1px solid #7b7b7b;
+}
+
+.card-subtitle {
+    text-align: right;
+    margin-top: -44px;
+}
+
+.mat-grid-tile .mat-figure {
+    top: 8px;
+    left: 20px;
+    display: inline;
+}
+
+.tab-group {
+    height: 230px;
+    background: #fff;
+    /* border: 1px solid #000; */
+    margin-top: 8px;
+    color: #000;
+}
+.tab-header  {
+    border-left: 1px solid #000;
+}
+.tab-content {
+    padding: 16px;
+    height: 140px;
+}
+.mat-grid-tile .mat-figure {
+    display: inline !important;
+}
+.row-style {
+    height: 3px;
+     cursor: pointer;
+}
+.row-style:hover {
+    background: #afafaf1f;
+}
+.p-text {
+    width: 30%;
+    float: left;
+    padding-left: 25px;
+    line-height: 1.5;
+}
+.card-p-text {
+    width: 18.5%;
+    float: left;
+    padding-left: 10px;
+    line-height: 1;
+}

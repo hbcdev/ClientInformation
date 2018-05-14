@@ -1,0 +1,207 @@
+<h2>{{page_title}}</h2>
+<hr class="hr-style">
+<mat-card class="card-contain">
+  <mat-card-subtitle style="text-align: right;margin-top: -44px;">
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #bacb9a7d ;color:#bacb9a7d;">xx</span> Active</span>
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #f90000c7 ;color:#f9000000;">xx</span> Terminate</span>
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #fffd3880 ;color:#fffd3880;">xx</span> Waitting Period</span>
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #fd9927ab ;color:#fd992700;">xx</span> Grace Period</span>
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #fdbacb95 ;color:#fdbacb00;">xx</span> Exclusion Waitting</span>
+    <span class="span-h">
+      <span class="tabcolor-span" style="background-color: #fc3a69b5 ;color:#fc3a6900;">xx</span> Black List</span>
+  </mat-card-subtitle>
+  <mat-card-content>
+    <!-- table -->
+    <div class="example-container mat-elevation-z8">
+      <table mat-table #table [dataSource]="displaySource">
+        <!-- PolicyNo Column -->
+        <ng-container matColumnDef="PolicyNo">
+          <th mat-header-cell *matHeaderCellDef class="headerCell"> Policy No </th>
+          <td mat-cell *matCellDef="let element" class="cell-item"> {{element.PolicyNo}} </td>
+        </ng-container>
+        <!-- Plan Column -->
+        <ng-container matColumnDef="Plan">
+          <th mat-header-cell *matHeaderCellDef class="headerCell"> Plan </th>
+          <td mat-cell *matCellDef="let element" class="cell-item"> {{element.Plan}} </td>
+        </ng-container>
+        <!-- Effective Column -->
+        <ng-container matColumnDef="Effective">
+          <th mat-header-cell *matHeaderCellDef class="headerCell"> Effective </th>
+          <td mat-cell *matCellDef="let element" class="cell-item"> {{element.Effective}} </td>
+        </ng-container>
+        <!-- Expired Column -->
+        <ng-container matColumnDef="Expired">
+          <th mat-header-cell *matHeaderCellDef class="headerCell"> Expired </th>
+          <td mat-cell *matCellDef="let element" class="cell-item"> {{element.Expired}} </td>
+        </ng-container>
+        <!-- PolicyYear Column -->
+        <ng-container matColumnDef="PolicyYear">
+          <th mat-header-cell *matHeaderCellDef class="headerCell"> Policy Year </th>
+          <td mat-cell *matCellDef="let element" class="cell-item"> {{element.PolicyYear}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayData" style="height: 5px;   "></tr>
+        <tr mat-row *matRowDef="let row; columns: displayData;" class="row-style"></tr>
+      </table>
+
+      <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5]" [showFirstLastButtons]="false">
+      </mat-paginator>
+    </div>
+    <!-- grid  -->
+    <div style="background: #fffffff0;margin-top: 8px;height: 350px;padding-left: 50px;">
+      <div>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Crad ID : </b>
+          <span>{{ clientData.cradID}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Name : </b>
+          <span>{{ clientData.name}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Policy Holder : </b>
+          <span>{{ clientData.policyHolder}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Policy No : </b>
+          <span>{{ clientData.policyNo}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Family / Pers.No : </b>
+          <span>{{ clientData.familyPerson}}</span>
+        </p>
+      </div>
+      <div>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Plan : </b>
+          <span>{{ clientData.plan}}</span>
+          <button mat-icon-button color="primary">
+            <mat-icon>zoom_in</mat-icon>
+          </button>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Personal ID : </b>
+          <span>{{ clientData.personalID}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Sex : </b>
+          <span>{{ clientData.sex}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Waitting To : </b>
+          <span>{{ clientData.waittingTo}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Plan ID : </b>
+          <span>{{ clientData.planID}}</span>
+        </p>
+      </div>
+      <div>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">DOB : </b>
+          <span>{{ clientData.DOB}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Age : </b>
+          <span>{{ clientData.age}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Policy Date : </b>
+          <span>{{ clientData.policyDate}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Grace To : </b>
+          <span>{{ clientData.graceTo}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Policy Year: </b>
+          <span>{{ clientData.policyYear}}</span>
+        </p>
+      </div>
+      <div>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Duration : </b>
+          <span>{{ clientData.duration}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Pay Freq : </b>
+          <span>{{ clientData.payFreq}}</span>
+        </p>
+        <!-- <p class="card-p-text">
+          <b style="font-size: 15px;">Policy Holder : </b>
+          <span>{{ clientData.}}</span>
+        </p> -->
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Status : </b>
+          <span>{{ clientData.status}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Rider Date : </b>
+          <span>{{ clientData.riderDate}}</span>
+        </p>
+      </div>
+      <div>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Deductible : </b>
+          <span>{{ clientData.deductible}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">ME Cover : </b>
+          <span>{{ clientData.meCover}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Effective : </b>
+          <span>{{ clientData.effective}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Exclusion Waitting : </b>
+          <span>{{ clientData.exclusionWaitting}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Co-Payment : </b>
+          <span>{{ clientData.coPayment}}</span>
+        </p>
+      </div>
+      <div>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">MC Cover : </b>
+          <span>{{ clientData.mcCover}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Expiry : </b>
+          <span>{{ clientData.expiry}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Chronic Waitting : </b>
+          <span>{{ clientData.chronicWaitting}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">HS Cover : </b>
+          <span>{{ clientData.hsCover}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">HB Limit : </b>
+          <span>{{ clientData.hbLimit}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Piad Date : </b>
+          <span>{{ clientData.piadDate}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Reinstable Date : </b>
+          <span>{{ clientData.reinstableDate}}</span>
+        </p>
+        <p class="card-p-text">
+          <b style="font-size: 15px;">Last Expiry : </b>
+          <span>{{ clientData.lastExpiry}}</span>
+        </p>
+      </div>
+    </div>
+    <app-client-tab></app-client-tab>
+
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,55 @@
+<mat-card style="height: 30px;" id="bfSearch">
+  <mat-card-content style="height: 25px;margin-top: -15px;margin-left: 50px;">
+    <form [formGroup]="searchForm" (ngSubmit)="search()">
+      <mat-form-field style="width: 450px;font-size: 16px;">
+        <mat-select placeholder="TPA" formControlName="stpa">
+          <mat-option value="1">Premium Internatioanl healcare Premium Internatioanl healcare </mat-option>
+          <mat-option value="2">sdds</mat-option>
+          <mat-option value="3">sdds</mat-option>
+          <mat-option value="4">sdds</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-radio-group style="margin-left: 25px" formControlName="search_by">
+        <span>Search By : </span>
+        <mat-radio-button value="1" style="margin-left: 15px">Policy No.</mat-radio-button>
+        <mat-radio-button value="2" style="margin-left: 15px">Name</mat-radio-button>
+        <mat-radio-button value="3" style="margin-left: 15px">Surname</mat-radio-button>
+        <mat-radio-button value="4" style="margin-left: 15px">NatioID</mat-radio-button>
+        <mat-radio-button value="5" style="margin-left: 15px">Card No.</mat-radio-button>
+        <mat-radio-button value="6" style="margin-left: 15px">Reference No.</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field class="example-full-width" style="margin-left: 15px;font-size: 16px;width: 250px;">
+        <input matInput placeholder="Policy No." value="" formControlName="policy_no">
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary" style="margin-left: 15px;font-size: 16px;width: 100px;height: 50px;">Search</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card style="height: 30px;display:none;" id="afSearch">
+  <mat-card-content style="height: 25px;margin-top: -5px;margin-left: 50px;font-size:16px">
+    <span style="padding: 5px;margin-left: 25px;">TPA :
+      <b>{{ searchData.tpa }} </b>
+    </span>
+    <span style="padding: 5px;margin-left: 25px;">Name :
+      <b>{{ searchData.name }} </b>
+    </span>
+    <span style="padding: 5px;margin-left: 25px;">Policy No :
+      <b> {{ searchData.policyNo }} </b>
+    </span>
+    <span style="padding: 5px;margin-left: 25px;">Search By :
+      <b> {{searchData.searchBy}} </b>
+    </span>
+    <span style="padding: 5px;margin-left: 25px;">Plan :
+      <b> {{searchData.plan}}</b>
+    </span>
+    <span style="padding: 5px;margin-left: 25px;">Plan ID :
+      <b>{{searchData.planID}} </b>
+    </span>
+
+    <button mat-raised-button style="margin-left: 15px;font-size: 12px;width: 70px;height: 40px;background-color: #20b2b7;color:#fff;padding: 0;"
+      (click)="newSearch()">New Search</button>
+  </mat-card-content>
+</mat-card>

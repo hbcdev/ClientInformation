@@ -1,0 +1,190 @@
+<h2>{{page_title}}</h2>
+<hr class="hr-style">
+<mat-card style="height: 800px;">
+    <mat-card-subtitle style="text-align: right;margin-top: -44px;">
+        <span class="span-h">
+          <span class="tabcolor-span" style="background-color: #fd9941 ;color:#ff00000a;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Claim Waitting</span>
+        <span class="span-h">
+          <span class="tabcolor-span" style="background-color: #ff000080 ;color:#ff00000a;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Deny</span>
+        <span class="span-h">
+          <span class="tabcolor-span" style="background-color: #fffd4b ;color:#fffd4b;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Exgratia</span>
+        <span class="span-h">
+          <span class="tabcolor-span" style="background-color: #f3f3f3 ;color:#f3f3f3;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Fax Claim</span>
+        <span class="span-h">
+          <span class="tabcolor-span" style="background-color: #fd6acb ;color:#fd6acb;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Cancel</span>
+        <span class="span-h">
+          <span class="tabcolor-span" style="background-color: #6dfd30 ;color:#6dfd30;border:1px solid #7b7b7b;margin-left: 10px">xx</span> Return</span>
+      </mat-card-subtitle>
+  <div style="overflow-x:auto;margin-top: -10px">
+    <table mat-table #table [dataSource]="claimHisDataTable">
+      <ng-container matColumnDef="RecieveDate">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>
+          <div style="width:100px">
+            RecieveDate
+          </div>
+        </th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.RecieveDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="NotifyNo">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>NotifyNo</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.NotifyNo}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Type">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Type</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Type}}</td>
+      </ng-container>
+      <ng-container matColumnDef="VisitNo">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>VisitNo</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.VisitNo}}</td>
+      </ng-container>
+      <ng-container matColumnDef="PolicyNo">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>
+          <div style="width:180px">PolicyNo</div>
+        </th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.PolicyNo}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Plan">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>
+          <div style="width:150px">Plan</div>
+        </th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Plan}}</td>
+      </ng-container>
+      <ng-container matColumnDef="ClientName">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>
+          <div style="width:205px">ClientName</div>
+        </th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.ClientName}}</td>
+      </ng-container>
+      <ng-container matColumnDef="AccDate">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>
+          <div style="width:100px">AccDate</div>
+        </th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.AccDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Hospital">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>
+          <div style="width:300px">Hospital</div>
+        </th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Hospital}}</td>
+      </ng-container>
+      <ng-container matColumnDef="AdmitDate">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>AdmitDate</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.AdmitDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Discharge">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Discharge</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Discharge}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Diags1">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Diags1</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Diags1}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Diags2">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Diags2</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Diags2}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Diags3">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Diags3</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Diags3}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Charge">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Charge</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Charge}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Discount">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Discount</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Discount}}</td>
+      </ng-container>
+      <ng-container matColumnDef="NonCover">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>NonCover</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.NonCover}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Benefit">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Benefit</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Benefit}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Exgratia">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Exgratia</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Exgratia}}</td>
+      </ng-container>
+      <ng-container matColumnDef="DeducPaid">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>DeducPaid</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.DeducPaid}}</td>
+      </ng-container>
+      <ng-container matColumnDef="ClientPaid">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>ClientPaid</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.ClientPaid}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Indicator">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Indicator</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Indicator}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Pending">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Pending</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Pending}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Assesor">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Assesor</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Assesor}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Nurse">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Nurse</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Nurse}}</td>
+      </ng-container>
+      <ng-container matColumnDef="AuditBy">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>AuditBy</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.AuditBy}}</td>
+      </ng-container>
+      <ng-container matColumnDef="ReturnDay">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>ReturnDay</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.ReturnDay}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Status">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>Status</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.Status}}</td>
+      </ng-container>
+      <ng-container matColumnDef="PuNo">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>PuNo</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.PuNo}}</td>
+      </ng-container>
+      <ng-container matColumnDef="ChqNo">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>ChqNo</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.ChqNo}}</td>
+      </ng-container>
+      <ng-container matColumnDef="PaidDate">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>PaidDate</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.PaidDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="PaidTo">
+        <th class="headerCell" mat-header-cell *matHeaderCellDef>PaidTo</th>
+        <td class="cell-item" mat-cell *matCellDef="let elm"> {{elm.PaidTo}}</td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="claimHisTable" style="height: 30px;background: #0d68861c"></tr>
+      <tr mat-row *matRowDef="let row; columns: claimHisTable;" style="height: 30px;" class="row-style"></tr>
+    </table>
+  </div>
+  <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5]" [showFirstLastButtons]="false">
+  </mat-paginator>
+
+  <div style="margin-top: -40px;">
+    <div class="panel">
+      <b>Indicstor of Admission :</b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quidem est numquam debitis voluptates
+      illum error odio, autem facilis temporibus voluptas laboriosam iste blanditiis minus, voluptatum rem consequuntur doloremque
+      magni.
+    </div>
+    <div class="panel">
+      <b>Treatment Plan :  </b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quidem est numquam debitis voluptates
+      illum error odio, autem facilis temporibus voluptas laboriosam iste blanditiis minus, voluptatum rem consequuntur doloremque
+      magni.
+    </div>
+  </div>
+
+  <div style="overflow-x:auto;margin-top: 110px;">
+    <app-claim-his-table2></app-claim-his-table2>
+    <button type="submit" mat-raised-button  style="float: right; margin-left: 15px;font-size: 16px;width: 150px;height: 50px;background-color: #20b2b7;color:#fff;">Export To Excel</button>
+  </div>
+ 
+  
+</mat-card>
