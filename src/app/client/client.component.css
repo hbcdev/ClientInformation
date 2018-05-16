@@ -1,6 +1,6 @@
 .card-contain {
     height: 800px;
-    background: #f90000c7;
+    background-color: #f90000c7;
 }
 
 .example-container {
@@ -52,7 +52,7 @@
 
 .tab-group {
     height: 230px;
-    background: #fff;
+    background-color : #fff;
     /* border: 1px solid #000; */
     margin-top: 8px;
     color: #000;
@@ -96,5 +96,5 @@
     margin-top: 5px;
     height: 57px;
     font-size: 14px;
-    background: #a1ff7112;
+    background-color: #a1ff7112;
 }

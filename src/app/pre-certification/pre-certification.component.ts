@@ -20,7 +20,9 @@ export class PreCertificationComponent implements OnInit {
   preCerDataTable = new MatTableDataSource<perCerModel>(PERCER_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  constructor() { }
+  constructor() {
+    $('.loading').show();
+  }
 
   ngOnInit() {
     this.preCerDataTable.paginator = this.paginator;

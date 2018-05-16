@@ -30,7 +30,7 @@
 <mat-drawer-container class="example-container" style="height: 1024px;margin-left: -10px">
   <mat-drawer #drawer class="example-sidenav" mode="side" style="background-color: #0D6886;     margin-left: 10px;">
     <mat-list>
-      <mat-list-item routerLink="/client" id="m1" class="menu-list" style="color:#fff;" (click)="check_menu('Client Information')">
+      <mat-list-item routerLink="/client" routerLinkActive="active" id="m1" class="menu-list" style="color:#fff;" (click)="check_menu('Client Information')">
         Client Information </mat-list-item>
       <mat-list-item routerLink="/ClaimDisability" id="m2" class="menu-list" style="color:#fff;" (click)="check_menu('Claim Disability')">
         Claim Disability </mat-list-item>

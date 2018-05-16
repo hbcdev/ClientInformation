@@ -20,7 +20,9 @@ export class AppointmentComponent implements OnInit {
     'RecieveCallDate'
   ];
   appPointDatatable = new MatTableDataSource<appPointModel>(APPPOINT_DATA);
-  constructor() { }
+  constructor() { 
+    $('.loading').show();
+  }
 
   ngOnInit() {
     $('.loading').hide();

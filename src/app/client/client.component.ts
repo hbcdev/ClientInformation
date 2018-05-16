@@ -17,7 +17,9 @@ export class ClientComponent implements OnInit {
   clientData: any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) {
+    $('.loading').show();
+   }
   ngOnInit() {
     setTimeout(() => {
       $('.loading').hide();

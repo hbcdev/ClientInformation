@@ -31,10 +31,10 @@ export class ClaimDisabilityComponent implements OnInit {
 
   ngOnInit() {
     this.mapCliamdis.paginator = this.paginator;
-    setTimeout(() => {
+    // setTimeout(() => {
       $('.loading').hide();
       console.log('oninit :');
-    }, 1500);
+    // }, 1500);
   }
 
 }

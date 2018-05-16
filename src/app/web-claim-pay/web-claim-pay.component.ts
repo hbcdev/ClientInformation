@@ -22,7 +22,9 @@ export class WebClaimPayComponent implements OnInit {
 
   claimPayDataTable = new MatTableDataSource<claimPayModel>(CLAIMPAY_DATA);
 
-  constructor() { }
+  constructor() {
+    $('.loading').show();
+   }
 
   ngOnInit() {
     $('.loading').hide();

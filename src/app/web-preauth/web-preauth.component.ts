@@ -21,7 +21,9 @@ export class WebPreauthComponent implements OnInit {
   ];
   preAuthDataTable = new MatTableDataSource<preAuthModel>(PREAUTH_DATA);
 
-  constructor() { }
+  constructor() {
+    $('.loading').show();
+   }
 
   ngOnInit() {
     $('.loading').hide();

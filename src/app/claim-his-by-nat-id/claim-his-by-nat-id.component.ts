@@ -46,7 +46,9 @@ export class ClaimHisByNatIDComponent implements OnInit {
     'PaidDate',
     'PaidTo'
   ];
-  constructor() { }
+  constructor() {
+    $('.loading').show();
+   }
 
   ngOnInit() {
     this.claimHisDataTable.paginator = this.paginator;
