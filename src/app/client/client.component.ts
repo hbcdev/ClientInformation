@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { MatPaginator, MatTableDataSource, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
+import {SEAECH_DATA } from '../search/search.component';
 import * as $ from 'jquery';
 // import { ClientDialogComponent } from '../client-dialog/client-dialog.component';
 
@@ -27,6 +29,8 @@ export class ClientComponent implements OnInit {
     }, 1500);
     this.displaySource.paginator = this.paginator;
     this.clientData = CLINT_DATA[0];
+
+    console.log('search Data in Client : ', SEAECH_DATA[0]);
   }
   openDialog() {
     this.dialog.open(ClientDialog, {

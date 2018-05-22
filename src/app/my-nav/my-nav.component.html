@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="loading">
+<div class="loading" style="display: none">
   <div class="sk-circle">
     <div class="sk-circle1 sk-child"></div>
     <div class="sk-circle2 sk-child"></div>
@@ -27,7 +27,7 @@
   </mat-toolbar>
 </div>
 
-<mat-drawer-container class="example-container" style="height: 1024px;margin-left: -10px">
+<mat-drawer-container class="example-container" style="height: 1000px;margin-left: -10px">
   <mat-drawer #drawer class="example-sidenav" mode="side" style="background-color: #0D6886;     margin-left: 10px;">
     <mat-list>
       <mat-list-item routerLink="/client" routerLinkActive="active" id="m1" class="menu-list" style="color:#fff;" (click)="check_menu('Client Information')">
@@ -47,7 +47,7 @@
   <div class="search-box">
     <app-search></app-search>
   </div>
-  <div class="containner">  
+  <div class="containner">
     <router-outlet></router-outlet>
   </div>
 </mat-drawer-container>
